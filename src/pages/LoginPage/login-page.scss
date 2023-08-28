@@ -1,0 +1,8 @@
+@use "../../styles/base.scss";
+.div-login-page {
+  background-color: base.$color-secondary;
+  color: base.$text-dark;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

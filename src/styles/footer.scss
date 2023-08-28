@@ -1,0 +1,12 @@
+@use "base";
+footer {
+  height: 10vh;
+  background-color: base.$color-primary;
+  color: base.$text-light;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 5px;
+}

@@ -1,0 +1,10 @@
+@use "../../../styles/base.scss";
+.div-login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  button {
+    background-color: base.$color-primary;
+  }
+}
