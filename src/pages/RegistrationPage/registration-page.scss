@@ -1,0 +1,9 @@
+@use "../../styles/base.scss";
+
+.registration-page-div {
+  background-color: base.$color-secondary;
+  color: base.$text-dark;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,10 +1,8 @@
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { RegistrationPage } from "./pages/RegistrationPage/RegistrationPage";
-import { supabase } from "./client";
 
 export const App = () => {
-  console.log(supabase);
   return (
     <div className="div-app">
       <Routes>
