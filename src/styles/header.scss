@@ -1,13 +1,13 @@
-@use "base";
+@import "./base";
 header {
   display: flex;
   justify-content: space-around;
   align-items: center;
   letter-spacing: 10px;
   height: 10vh;
-  background-color: base.$color-primary;
-  color: base.$text-light;
+  background-color: $color-primary;
+  color: $text-light;
   span {
-    color: base.$text-light;
+    color: $text-light;
   }
 }

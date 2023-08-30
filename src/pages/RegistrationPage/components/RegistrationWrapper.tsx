@@ -1,6 +1,6 @@
 import { Button, Form, Input, Select, InputNumber, DatePicker } from "antd";
-import { useContext } from "react";
-import { TaskContext } from "../../../modules/task/task.context";
+import { taskService } from "../../../modules/task/task.service";
+
 import "./registration-wrapper.scss";
 
 const onFinishFailed = (errorInfo: unknown) => {
@@ -14,12 +14,6 @@ type FieldType = {
 const { Option } = Select;
 
 export const RegistrationWrapper = () => {
-  const { setRegularUsers } = useContext(TaskContext);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onFinish = (values: any) => {
-    setRegularUsers(values);
-    // console.log("Success:", values);
-  };
   return (
     <div className="div-registration-wrapper">
       <Form
@@ -28,7 +22,7 @@ export const RegistrationWrapper = () => {
         wrapperCol={{ span: 16 }}
         style={{ maxWidth: 600 }}
         initialValues={{ remember: true }}
-        onFinish={onFinish}
+        onFinish={taskService.onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
