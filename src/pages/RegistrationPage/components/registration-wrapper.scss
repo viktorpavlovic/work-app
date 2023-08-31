@@ -1,9 +1,6 @@
-@use "../../../styles/base.scss";
+@import "../../../styles/base.scss";
 .div-registration-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
+  @include align-page-content;
   form {
     padding: 40px;
   }

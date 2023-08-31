@@ -1,7 +1,7 @@
-@use "../../styles/base.scss";
+@import "../../styles/base.scss";
 .div-login-page {
-  background-color: base.$color-secondary;
-  color: base.$text-dark;
+  background-color: $color-secondary;
+  color: $text-dark;
   height: 100vh;
   display: flex;
   flex-direction: column;
