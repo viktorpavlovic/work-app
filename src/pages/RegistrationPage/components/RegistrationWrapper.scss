@@ -1,6 +1,8 @@
-@import "../../../styles/base.scss";
+@import "../../../styles/Base.scss";
+
 .div-registration-wrapper {
   @include align-page-content;
+
   form {
     padding: 40px;
   }

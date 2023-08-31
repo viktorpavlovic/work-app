@@ -1,7 +1,8 @@
-@import "../../../styles/base.scss";
+@import "../../../styles/Base.scss";
 
 .div-login-wrapper {
   @include align-page-content;
+
   button {
     background-color: $color-primary;
   }

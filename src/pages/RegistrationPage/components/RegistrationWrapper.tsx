@@ -1,7 +1,7 @@
 import { Button, Form, Input, Select, InputNumber, DatePicker } from "antd";
 import { taskService } from "../../../modules/task/task.service";
 
-import "./registration-wrapper.scss";
+import "./RegistrationWrapper.scss";
 
 const onFinishFailed = (errorInfo: unknown) => {
   console.log("Failed:", errorInfo);
@@ -22,7 +22,7 @@ export const RegistrationWrapper = () => {
         wrapperCol={{ span: 16 }}
         style={{ maxWidth: 600 }}
         initialValues={{ remember: true }}
-        onFinish={taskService.onFinish}
+        onFinish={taskService.onFinishRegistrationForm}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
