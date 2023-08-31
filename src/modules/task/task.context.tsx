@@ -1,10 +1,8 @@
 import React, { createContext, useState } from "react";
-import { RegularUsers } from "./task.types";
-import { formatDateToIso } from "../../utils/dateTime";
 
 type TaskContextType = {
-  regularUsers: RegularUsers | null;
-  setRegularUsers: React.Dispatch<React.SetStateAction<RegularUsers | null>>;
+  role: null | number;
+  setRole: React.Dispatch<React.SetStateAction<null | number>>;
 };
 
 type TaskProviderProps = {
@@ -15,16 +13,17 @@ type TaskProviderProps = {
 export const TaskContext = createContext<TaskContextType>(null as any);
 
 export const TaskProvider = ({ children }: TaskProviderProps) => {
-  const [regularUsers, setRegularUsers] = useState<RegularUsers | null>(null);
-  console.log(regularUsers);
-  //   formatDateToIso(regularUsers?.birthDate);
-  if (regularUsers?.birthDate) {
-    const date = formatDateToIso(regularUsers?.birthDate);
-    console.log(date);
-  }
+  const [role, setRole] = useState<null | number>(null);
+
   return (
-    <TaskContext.Provider value={{ regularUsers, setRegularUsers }}>
+    <TaskContext.Provider value={{ role, setRole }}>
       {children}
     </TaskContext.Provider>
   );
 };
+
+//   formatDateToIso(regularUsers?.birthDate);
+// if (regularUsers?.birthDate) {
+//   const date = formatDateToIso(regularUsers?.birthDate);
+//   console.log(date);
+// }

@@ -1,9 +1,6 @@
 import { Button, Form, Input } from "antd";
-import "./login-wrapper.scss";
-
-const onFinish = (values: unknown) => {
-  console.log("Success:", values);
-};
+import { taskService } from "../../../modules/task/task.service";
+import "./LoginWrapper.scss";
 
 const onFinishFailed = (errorInfo: unknown) => {
   console.log("Failed:", errorInfo);
@@ -21,7 +18,7 @@ export const LoginWrapper = () => {
         wrapperCol={{ span: 16 }}
         style={{ maxWidth: 600 }}
         initialValues={{ remember: true }}
-        onFinish={onFinish}
+        onFinish={taskService.onFinishLogIn}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >

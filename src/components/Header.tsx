@@ -1,4 +1,4 @@
-import "../styles/header.scss";
+import "../styles/Header.scss";
 import { Button } from "antd";
 
 export const Header = () => {

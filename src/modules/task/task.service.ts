@@ -1,32 +1,28 @@
-import { supabase } from "../../client";
+import { taskRepo } from "./task.repo";
+import { taskAuth } from "./task.auth";
+import { AllData, AuthData } from "./task.types";
 
 class TaskService {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onFinish = async (values: any) => {
+  onFinishRegistrationForm = async (values: AllData) => {
     try {
-      const { data, error } = await supabase.auth.signUp({
-        email: values.email,
-        password: values.password,
-      });
+      const { data, error } = await taskAuth.signUpUser(values);
       if (error) throw error;
-      if (error !== null) alert(error);
-      const { error: insertError } = await supabase
-        .from("admins")
-        .insert([
-          {
-            id: data?.user?.id, // Access user's id from response
-            email: values.email,
-            password: values.password,
-          },
-        ])
-        .select();
-
+      const { error: insertError } = await taskRepo.insertUser(
+        data?.user?.id,
+        values
+      );
       if (insertError) throw insertError;
     } catch (error) {
-      console.log(error);
       alert(error);
     }
   };
+
+  onFinishLogIn = (values: AuthData) => {
+    taskAuth.signInUser(values);
+    console.log(values);
+  };
+
+  findRole = () => {};
 }
 
 export const taskService = new TaskService();

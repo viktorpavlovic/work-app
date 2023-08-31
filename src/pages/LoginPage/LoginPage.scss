@@ -1,9 +1,9 @@
-@import "../../styles/base.scss";
+@import "../../styles/Base.scss";
 
-.registration-page-div {
+.div-login-page {
   background-color: $color-secondary;
   color: $text-dark;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
